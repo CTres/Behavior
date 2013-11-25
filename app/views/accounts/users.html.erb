@@ -1,0 +1,13 @@
+<% if current_user %>
+<ul>
+<% @account.users.each do |f| %>
+<li class="inline-block">
+<%= f.name %>
+<%= f.email %>
+</li>
+<% end %>
+</ul>
+
+<%= render partial: "invite" %>
+<% end %>
+

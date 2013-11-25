@@ -36,12 +36,16 @@
             <a href="#">settings</a> 
             </li>
           </ul>
-          <ul id="user-links" class="navbar pull-right">
-            <div class="user-links"> 
+          <ul id="user-links" class="navbar pull-right inline">
+            <li>
               <%= image_tag current_user.avatar_url, size: "30x30"%>
+            </li>
+            <li>
               <%= current_user.name %>
-            </div>
-            <a class="btn-auth btn-<%="#{current_user.provider}"%>" a href="/users/logout" data-method="delete" rel="nofollow">logout</a>
+            </li>
+            <li>
+            <a class="btn btn-primary" a href="/users/logout" data-method="delete" rel="nofollow">logout</a>
+            </li>
           </ul>
         </div> <!-- navbar-content  -->
       <% end %>

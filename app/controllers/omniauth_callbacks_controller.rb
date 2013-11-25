@@ -6,6 +6,8 @@
     session['token'] = env["omniauth.auth"]['credentials']['token']
     if user.persisted?
       flash.notice = "Signed in!"
+      #if user.account nil, prompt the user to add a company name
+      #if company name is new, create a new account, else send a request to the account owner to approve
       sign_in_and_redirect user
     else
       session["devise.user_attributes"] = user.attributes

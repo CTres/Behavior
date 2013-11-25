@@ -1,0 +1,7 @@
+<%= simple_form_for @account, url: invite_user_path() do |a| %>
+	<%= a.simple_fields_for :user do |f| %>
+		<%= f.input :name, label: false, placeholder: 'name' %>
+		<%= f.input :email, label: false, placeholder: 'email' %>
+		<%= f.button :submit, :value => 'Add Team Member' %>
+	<% end %>
+<% end %>

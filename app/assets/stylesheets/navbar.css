@@ -1,0 +1,33 @@
+.navbar-content {
+padding-top: 12px;
+vertical-align: middle;
+}
+	.brand {
+	font-family: "freight-sans-pro",sans-serif;
+	font-weight: bold;
+	border-radius: 3px;
+}
+
+.search-query {
+	margin-left: 20px;
+	font-family: "freight-sans-pro",sans-serif;
+	font-weight: normal;
+}
+
+.nav {
+	font-family: "freight-sans-pro",sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.navbar .pull-right {
+	padding-right: 10px;
+}
+
+.user-links {
+	display: inline-block;
+	padding-right: 25px;
+	font-family: "freight-sans-pro",sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+}
