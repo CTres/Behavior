@@ -1,13 +1,13 @@
 class AccountsController <ApplicationController
-  def users
-  	if current_user
-	  	@user = current_user
-	  	@account = current_user.account
-	  	@users = current_user.account.users
-  	end
-  end
+  
 
   def index
+    if current_user
+      @user = current_user
+      @account = current_user.account
+      @products = @account.products
+      @users = current_user.account.users
+    end
   end
   
   def invite_user
@@ -23,7 +23,14 @@ class AccountsController <ApplicationController
   	end
   end
 
-  
+  def settings
+      if current_user
+        @user = current_user
+        @account = current_user.account
+        @users = current_user.account.users
+      end
+    end
+
 end
 
 

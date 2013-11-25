@@ -1,0 +1,17 @@
+<h1> Product Name </h1>
+<%= product.name %>
+<br>
+
+<h3> Metrics </h3>
+<% product.metrics.each do |f| %>
+
+<%= f.value %>
+<br>
+<% end %>
+<br>
+
+<h3> Goals </h3>
+<% product.goals.each do |f| %>
+<%= f.value %>
+<br>
+<% end %>

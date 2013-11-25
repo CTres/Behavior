@@ -11,12 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131124140535) do
+ActiveRecord::Schema.define(:version => 20131125152908) do
 
   create_table "accounts", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "company"
+  end
+
+  create_table "assumptions", :force => true do |t|
+    t.string   "value"
+    t.string   "state"
+    t.integer  "concept_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "authorizations", :force => true do |t|
@@ -26,6 +34,37 @@ ActiveRecord::Schema.define(:version => 20131124140535) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "username"
+  end
+
+  create_table "concepts", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "impact"
+    t.string   "state"
+    t.integer  "product_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "goals", :force => true do |t|
+    t.string   "value"
+    t.integer  "product_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "metrics", :force => true do |t|
+    t.string   "value"
+    t.integer  "product_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.integer  "account_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

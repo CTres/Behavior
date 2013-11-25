@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 	#Associations
 	belongs_to :account
 	has_many :authorizations
+  has_many :products
   after_create :assign_owner
 
   # Include default devise modules. Others available are:
