@@ -28,6 +28,7 @@ gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
+gem 'nested_form'
 
 group :development do
   gem 'better_errors'

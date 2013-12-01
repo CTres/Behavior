@@ -1,0 +1,107 @@
+.team-name {
+
+font-family: "freight-sans-pro",sans-serif;
+font-size: 30px;
+font-style: normal;
+font-variant: normal;
+font-weight: bold;
+text-align: center;
+margin-bottom: 10px;
+}
+.content-container {
+background-color: rgb(255, 255, 255);
+border-bottom-color: rgb(202, 202, 202);
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-left-color: rgb(202, 202, 202);
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: rgb(202, 202, 202);
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: rgb(202, 202, 202);
+border-top-style: solid;
+border-top-width: 1px;
+color: rgb(51, 51, 51);
+display: block;
+font-family: Helvetica, arial, freesans, clean, sans-serif;
+font-size: 13px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+min-height: 32px;
+padding-top: 0px;
+margin-bottom: 20px;
+height: auto;
+}
+
+.content-header {
+
+background-color: rgb(225, 225, 225);
+background-image: linear-gradient(rgb(248, 248, 248), rgb(225, 225, 225));
+background-repeat: repeat-x;
+border-bottom-color: rgb(204, 204, 204);
+border-bottom-style: solid;
+border-bottom-width: 1px;
+color: rgb(51, 51, 51);
+display: block;
+font-family: "freight-sans-pro",sans-serif;
+padding-left: 10px;
+font-size: 20px;
+font-style: normal;
+font-variant: normal;
+font-weight: bold;
+height: 33px;
+line-height: 33px;
+
+}
+
+.content-content {
+	height: auto;
+	min-height: 25px;
+  line-height: 25px;
+	font-family: "freight-sans-pro",sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  padding-right: 10px;
+  padding-left: 6px;
+}
+
+
+
+.metric-tags {
+	margin-right: 5px;
+	margin-left: 5px;
+	line-height: 20px;
+	font-family: "freight-sans-pro",sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.modal-body {
+	text-align: center;
+}
+
+
+.vision {
+	margin-bottom: 20px;
+}
+
+
+
+.stats {
+	text-align: center;
+}
+
+.metric-button {
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+}

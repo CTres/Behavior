@@ -13,7 +13,7 @@ before_filter :authenticate_user!
       @account = current_user.account
       @products = @account.products
       @users = current_user.account.users
-      @account.metrics.build
+      @metrics = @account.metrics
     end
   end
   

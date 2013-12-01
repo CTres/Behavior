@@ -1,16 +1,17 @@
 <div class="container account">
 	<div class="row">
 		<div class="span9 offset2">
-		<div style="text-align: center"> <%= @account.company %> Product Team </div>
+		<div class="team-name"> <%= @account.company %> Product Team </div>
 		<br>
-			<div class="vision">
-				<% if @account.vision.blank? %>
-					<%= content_tag :a, 'Add Vision Statement', :href => "#modal-window", class: "btn", data: {toggle: 'modal'} %>
-				<% else %>
-					<h3> Vision </h3>
-					" <%= @account.vision  %> "
-				<% end %>
-				<br>
+			<div class="content-container">
+				<div class="content-header">Vision</div>
+					<div class="content-content" id="vision">
+					<% if @account.vision.blank? %>
+						<%= content_tag :a, 'Add Vision Statement', :href => "#modal-window", class: "btn", data: {toggle: 'modal'} %>
+					<% else %>
+						" <%= @account.vision  %> "
+					<% end %>
+					</div>
 				<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button> 
@@ -26,31 +27,14 @@
 					</div>
 				</div>
 			</div>
-			<legend> Metrics </legend>
-			<div class="metrics">
-					<% @account.metrics.each do |f| %>
-						<div class="label label-info" id="metric-<%="#{f.id}"%>"><%= f.value %>
-						<%= link_to "X", [@account, f], :method => :delete, remote: true, :class => 'btn btn-mini btn-danger'%>
-						</div>
-					<% end %>
-				<%= content_tag :a, 'Add Metric', :href => "#metrics-window", class: "btn", data: {toggle: 'modal'} %>
-				<br>
-				<div id="metrics-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button> 
-						<h3> Team Metrics</h3>
-					</div>
-					<div class="modal-body">
-						<%= simple_form_for(@account) do |f| %>
-							<%= f.simple_fields_for :metrics, :html => {:class => 'metric-form' } do |m| %>
-								<%= m.input :value, label: false, placeholder: "add metric"%>
-							<% end %>
-					</div>
-					<div class="modal-footer"> 
-					<%= f.button :submit, 'Save Metrics'%>
-					<% end %>
-					</div>
+			<div class="content-container ">
+				<div class="content-header">Metrics
 				</div>
+				<div class="content-content">
+					<%= render partial: @metrics %>
+					<%= content_tag :a, 'Edit Metrics', :href => "#metrics-window", class: "btn metric-button", data: {toggle: 'modal'} %>
+				</div>
+				<%= render partial: 'accounts/metrics_form' %>
 			</div>
 			<hr>
 			<div class="stats">

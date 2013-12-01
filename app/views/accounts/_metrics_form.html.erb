@@ -1,0 +1,18 @@
+<div id="metrics-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button> 
+						<h3> Team Metrics</h3>
+					</div>
+					<div class="modal-body">
+						<%= simple_nested_form_for(@account, :wrapper => false) do |f| %>
+							<%= f.fields_for :metrics do |m| %>
+								<%= m.text_field :value, label: false, placeholder: "add metric"%>
+								<%= m.link_to_remove "X" %>
+							<% end %>
+							<%= f.link_to_add "add metric", :metrics %>
+					</div>
+					<div class="modal-footer"> 
+					<%= f.button :submit, 'Save Metrics'%>
+					<% end %>
+					</div>
+				</div>
