@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="status"></div>
+  <br>
+  <div class="row" id="feature-row">
+    <div class="span8 offset2">
+      <div class="feature-inner">
+        <%= simple_form_for(@concept, url: product_concept_path(@product), method: :put) do |f| %>
+          <%= f.input :title, input_html: {class: "span8"}, placeholder: "add your title", label: false, as: :text, autofocus: true%>
+          <%= f.input :description, input_html: {class: "span8"}, placeholder: "add your description", label: false, as: :text, autofocus: true%>
+          <%= f.input :impact, input_html: {class: "span8"}, placeholder: "add your impact", label: false, as: :text, autofocus: true%>
+          <%= f.button :submit, 'Update Concept' %>
+        <% end %>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

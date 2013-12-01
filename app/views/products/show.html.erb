@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+		<div class="span6">
+		<%= link_to 'add concept', new_product_concept_path(@product) %>
+			<h2><%= @product.name %> </h2>
+			
+			<% @concepts.each do |c| %>
+			<%= link_to c.title, edit_product_concept_path(@product, c) %>
+			<%= c.description %>
+			<br>
+			<% end %>
+		</div>
+		</div>
+	</div>
+</div>

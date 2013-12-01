@@ -1,1 +1,17 @@
-hi!
+<h2> concept show </h2>
+<div class="container">
+	<div class="row">
+		<div class="span9">
+			<h2> <%= @product.name %>: <%= @concept.title %> </h2>
+		</div>
+	</div>
+</div>
+
+
+			<%= simple_form_for(@concept, url: product_concepts_path(@product), method: :post)  do |f| %>
+				<%= f.simple_fields_for :assumption do |a| %>
+					<%= a.input :value %>
+					<%= a.input :state %>
+					<%= a.button :submit %>
+				<% end %>
+			<% end %>

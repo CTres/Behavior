@@ -1,0 +1,44 @@
+#concept_title {
+  font-family: "freight-sans-pro",sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 32px;
+  height: 60px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  resize: none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
+	border: none;
+  outline: none;
+}
+
+#concept_description {
+  font-family: "freight-sans-pro",sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 32px;
+  height: 60px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  resize: none;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+}
+
+#concept_impact {
+  font-family: "freight-sans-pro",sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 32px;
+  height: 60px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  resize: none;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+}

@@ -1,0 +1,13 @@
+<ul>
+	<% @product.concepts.each do |f| %>
+		<li>
+			<legend> <%= link_to f.title, f %></legend>
+			Description: <%= f.description %>
+			<br>
+			Impact: <%= f.impact %>
+			<br>
+			State: <%= f.state %>
+			<br>
+		</li>
+	<% end %>
+</ul>

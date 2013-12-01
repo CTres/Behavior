@@ -10,13 +10,19 @@ Myapp::Application.routes.draw do
   root to: 'accounts#index'
 
 match "invite_user" => "accounts#invite_user", as: 'invite_user'
+get "accounts/vision" => "accounts#vision", as: "vision"
+
+  resources :assumptions
+  resources :users
 
   resources :accounts do 
     get :settings
-  	resources :users
+    resources :metrics
+  end
 
-  	resources :products do 
-      resources :concepts
-    end
+
+
+  resources :products do
+    resources :concepts 
   end
 end

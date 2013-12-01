@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131125152908) do
+ActiveRecord::Schema.define(:version => 20131129144807) do
 
   create_table "accounts", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "company"
+    t.string   "vision"
   end
 
   create_table "assumptions", :force => true do |t|
@@ -44,6 +45,8 @@ ActiveRecord::Schema.define(:version => 20131125152908) do
     t.integer  "product_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "account_id"
+    t.integer  "user_id"
   end
 
   create_table "goals", :force => true do |t|
@@ -56,8 +59,10 @@ ActiveRecord::Schema.define(:version => 20131125152908) do
   create_table "metrics", :force => true do |t|
     t.string   "value"
     t.integer  "product_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "metricable_id"
+    t.string   "metricable_type"
   end
 
   create_table "products", :force => true do |t|
@@ -65,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20131125152908) do
     t.integer  "account_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

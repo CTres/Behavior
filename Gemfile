@@ -36,6 +36,7 @@ group :development do
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'rails-footnotes', '>= 3.7.9'
 end
 
 group :development, :test do

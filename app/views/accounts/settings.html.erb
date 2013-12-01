@@ -1,4 +1,10 @@
-<% if current_user %>
+<h2> Vision Statement </h2>
+<%= simple_form_for(@account, method: :put) do |f| %>
+ <%= f.input :vision %>
+ <%= f.button :submit, "Edit Vision" %>
+ <% end %>
+
+<h2> Users </h2>
 <ul>
 <% @account.users.each do |f| %>
 <li class="inline-block">
@@ -9,5 +15,5 @@
 </ul>
 
 <%= render partial: "invite" %>
-<% end %>
+
 

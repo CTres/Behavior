@@ -1,3 +1,76 @@
-<%if current_user %>
-	<%= render @products %>
-<% end %>
+<div class="container account">
+	<div class="row">
+		<div class="span9 offset2">
+		<div style="text-align: center"> <%= @account.company %> Product Team </div>
+		<br>
+			<div class="vision">
+				<% if @account.vision.blank? %>
+					<%= content_tag :a, 'Add Vision Statement', :href => "#modal-window", class: "btn", data: {toggle: 'modal'} %>
+				<% else %>
+					<h3> Vision </h3>
+					" <%= @account.vision  %> "
+				<% end %>
+				<br>
+				<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button> 
+						<h3> Vision Statement</h3>
+					</div>
+					<div class="modal-body">
+						<%= simple_form_for(@account, method: :put) do |f| %>
+						<%= f.input :vision, label: false, placeholder: "add team vision" %>
+					</div>
+					<div class="modal-footer"> 
+						<%= f.button :submit, "Update Vision" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+			<legend> Metrics </legend>
+			<div class="metrics">
+					<% @account.metrics.each do |f| %>
+						<div class="label label-info" id="metric-<%="#{f.id}"%>"><%= f.value %>
+						<%= link_to "X", [@account, f], :method => :delete, remote: true, :class => 'btn btn-mini btn-danger'%>
+						</div>
+					<% end %>
+				<%= content_tag :a, 'Add Metric', :href => "#metrics-window", class: "btn", data: {toggle: 'modal'} %>
+				<br>
+				<div id="metrics-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button> 
+						<h3> Team Metrics</h3>
+					</div>
+					<div class="modal-body">
+						<%= simple_form_for(@account) do |f| %>
+							<%= f.simple_fields_for :metrics, :html => {:class => 'metric-form' } do |m| %>
+								<%= m.input :value, label: false, placeholder: "add metric"%>
+							<% end %>
+					</div>
+					<div class="modal-footer"> 
+					<%= f.button :submit, 'Save Metrics'%>
+					<% end %>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="stats">
+				<div class="row">
+					<div class="span3">
+					Products: <%=@account.products.count %>
+					</div>
+					<div class="span3">
+					Concepts: <%=@account.concepts.count %>
+					</div>
+					<div class="span3">
+					Tests: <%=@account.concepts.where(state: 'testing').count %>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<%if current_user %>
+				<%= link_to 'add product', new_product_path%>
+				<%= render @products %>
+			<% end %>
+		</div>
+	</div>
+</div>
