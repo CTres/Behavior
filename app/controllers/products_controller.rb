@@ -15,10 +15,10 @@ class ProductsController < ApplicationController
 	end
 
 	def show
-		@product = Product.find(params[:id])
-		@account = current_account
+		@product  = Product.find(params[:id])
+		@account  = current_account
 		@concepts = @product.concepts
-		# @ideas   = @product.concepts.where(:state == 'idea')
+		@metrics  = @product.metrics
 	end
 
 	def update

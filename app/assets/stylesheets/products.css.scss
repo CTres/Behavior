@@ -26,3 +26,18 @@
 	display: inline-block;
 
 }
+
+#product_name {
+  font-family: "freight-sans-pro",sans-serif;
+  font-size: 52px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  height: 52px;
+  line-height: 52px;
+  margin-bottom: 10px;
+  color: rgb(51, 51, 50); 
+  border: none;
+  resize: none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
+  outline: none;
+}

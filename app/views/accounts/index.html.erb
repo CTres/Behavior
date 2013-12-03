@@ -1,40 +1,28 @@
 <div class="container account">
 	<div class="row">
 		<div class="span9 offset2">
-		<div class="team-name"> <%= @account.company %> Product Team </div>
-		<br>
+			<div class="team-name"> <%= @account.company %> Product Team </div>
+			<br>
+
 			<div class="content-container">
 				<div class="content-header">Vision</div>
-					<div class="content-content" id="vision">
+				<div class="content-content" id="vision">
 					<% if @account.vision.blank? %>
 						<%= content_tag :a, 'Add Vision Statement', :href => "#modal-window", class: "btn", data: {toggle: 'modal'} %>
 					<% else %>
 						" <%= @account.vision  %> "
 					<% end %>
-					</div>
-				<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button> 
-						<h3> Vision Statement</h3>
-					</div>
-					<div class="modal-body">
-						<%= simple_form_for(@account, method: :put) do |f| %>
-						<%= f.input :vision, label: false, placeholder: "add team vision" %>
-					</div>
-					<div class="modal-footer"> 
-						<%= f.button :submit, "Update Vision" %>
-						<% end %>
-					</div>
 				</div>
+				<%= render partial: 'accounts/vision_form' %>
 			</div>
+
 			<div class="content-container ">
-				<div class="content-header">Metrics
-				</div>
+				<div class="content-header">Metrics</div>
 				<div class="content-content">
 					<%= render partial: @metrics %>
 					<%= content_tag :a, 'Edit Metrics', :href => "#metrics-window", class: "btn metric-button", data: {toggle: 'modal'} %>
 				</div>
-				<%= render partial: 'accounts/metrics_form' %>
+				<%= render partial: 'shared/metrics_form', locals: {resource: @account} %>
 			</div>
 			<hr>
 			<div class="stats">
@@ -51,10 +39,14 @@
 				</div>
 			</div>
 			<hr>
-			<%if current_user %>
-				<%= link_to 'add product', new_product_path%>
-				<%= render @products %>
-			<% end %>
+				<div class="row">
+					<div class="span12" style="margin-left: 0px">
+						<%= render @products %>
+					</div>
+				</div>
+			<div class="row span9">
+			<%= button_to 'add product', new_product_path, method: :get%>
+			</div>
 		</div>
 	</div>
 </div>

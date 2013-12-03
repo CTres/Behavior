@@ -1,34 +1,36 @@
-<div class="container product">
-<div class="well span6">
-	<h2 style="text-transform: capitalize;"><%= link_to product.name, product %> </h2>
-	<h4> Metrics </h4>
-	<ul>
-		<% product.metrics.each do |f| %>
-			<li>
-				<%= f.value %>
-			</li>
-		<% end %>
-	</ul>
-
-	<h4> Goals </h4>
-	<ul>
-		<% product.goals.each do |f| %>
-			<li>
-				<%= f.value %>
-			</li>
-		<% end %>
-	</ul>
-
-	<h4> Concept Tests: <%=product.concepts.count%> </h4>
-	<ul>
-
-		<% product.concepts.each do |f| %>
-			<li>
-				<%= link_to f.title, product_concept_path(f, product) %>
-				<br>
-			</li>
-		<% end %>
-	</ul>
+<div class="span3">
+	<div class="content-container">
+		<div class="content-header">
+		<%= link_to product.name, product %>
+		</div>
+		<div class="content-content">
+			<h4> Metrics </h4>
+			<ul>
+				<% product.metrics.each do |f| %>
+					<li>
+						<%= f.value %>
+					</li>
+				<% end %>
+			</ul>
+			<h4> Goals </h4>
+			<ul>
+				<% product.goals.each do |f| %>
+					<li>
+						<%= f.value %>
+					</li>
+				<% end %>
+			</ul>
+			<h4> Concept Tests: <%=product.concepts.count%> </h4>
+			<ul>
+				<% product.concepts.each do |f| %>
+					<li>
+						<%= link_to f.title, product_concept_path(f, product) %>
+						<br>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
 </div>
-</div>
+
 

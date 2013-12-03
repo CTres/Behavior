@@ -1,15 +1,25 @@
 <div class="container">
 	<div class="row">
 		<div class="span6">
-		<%= link_to 'add concept', new_product_concept_path(@product) %>
 			<h2><%= @product.name %> </h2>
-			
-			<% @concepts.each do |c| %>
-			<%= link_to c.title, edit_product_concept_path(@product, c) %>
-			<%= c.description %>
-			<br>
-			<% end %>
 		</div>
 		</div>
+	</div>
+
+	<div class="content-container ">
+		<div class="content-header">Metrics</div>
+		<div class="content-content">
+			<%= render partial: @metrics %>	
+			<%= render partial: 'shared/metrics_form', locals: {resource: @product} %>
+			<%= content_tag :a, 'Edit Metrics', :href => "#metrics-window", class: "btn metric-button", data: {toggle: 'modal'} %>
+		</div>
+</div>
+
+<div class="content-container">
+	<div class="content-header">Concepts</div>
+	<div class="content-content">
+		<%= link_to 'new concept', new_product_concept_path(@product) %>
+		<%= render partial: @concepts.where(state: 'idea') %>
+		<%= render partial: @concepts %>
 	</div>
 </div>

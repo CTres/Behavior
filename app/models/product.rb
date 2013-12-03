@@ -7,9 +7,9 @@ class Product < ActiveRecord::Base
   has_many :goals
   has_many :concepts
 
-  attr_accessible :name, :concepts_attributes
+  attr_accessible :name, :concepts_attributes, :metrics_attributes
 
-  accepts_nested_attributes_for :metrics
+  accepts_nested_attributes_for :metrics, :allow_destroy => true
   accepts_nested_attributes_for :goals
   accepts_nested_attributes_for :concepts
   

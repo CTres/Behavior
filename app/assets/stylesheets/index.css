@@ -38,7 +38,7 @@ height: auto;
 .content-header {
 
 background-color: rgb(225, 225, 225);
-background-image: linear-gradient(rgb(248, 248, 248), rgb(225, 225, 225));
+background-image: linear-gradient(rgb(290, 290, 290), rgb(225, 225, 225));
 background-repeat: repeat-x;
 border-bottom-color: rgb(204, 204, 204);
 border-bottom-style: solid;
@@ -82,7 +82,7 @@ line-height: 33px;
   font-size: 15px;
   text-align: center;
   vertical-align: middle;
-
+  margin-bottom: 5px;
 }
 
 .modal-body {

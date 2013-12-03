@@ -9,6 +9,7 @@ class ConceptsController <ApplicationController
 	def create
 		@product = Product.find(params[:product_id])
 	    @concept = @product.concepts.new(params[:concept])
+	    @concept.state = 'idea'
 	    respond_to do |format|
 	      if @concept.save
 	        #add the original poster as a feature user. 
