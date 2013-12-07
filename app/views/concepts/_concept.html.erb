@@ -1,10 +1,8 @@
-<div class="span3">
-	<div class="content-container">
-		<div class="content-header">
-		<%= link_to concept.title, product_concept_path(concept) %>
-		</div>
-		<div class="content-content">
-			
-		</div>
-	</div>
-</div>
+<tr>
+<td>
+<%= link_to concept.title, product_concept_path(@product, concept) %>
+</td>
+<td>
+
+</td>
+</tr>

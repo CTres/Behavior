@@ -1,6 +1,15 @@
 <div class="container">
 	<div class="row">
 		<div class="span6">
+		<ol class="breadcrumb">
+			<li>
+	  		<%=link_to 'home', root_path%>
+	  		<span class="divider">|</span>  
+	  	</li> 
+	  	<li class="active">
+	  	<%=link_to_unless_current(@product.name, @product)%> </li>
+	  	<span class="divider">|</span>  
+		</ol>
 			<h2><%= @product.name %> </h2>
 		</div>
 		</div>
@@ -19,7 +28,10 @@
 	<div class="content-header">Concepts</div>
 	<div class="content-content">
 		<%= link_to 'new concept', new_product_concept_path(@product) %>
-		<%= render partial: @concepts.where(state: 'idea') %>
+<!-- 		<%= render partial: @concepts.where(state: 'idea') %> -->
+<table class="table	table-striped table-hover">
+<th>Concept</th>
 		<%= render partial: @concepts %>
+</table>
 	</div>
 </div>

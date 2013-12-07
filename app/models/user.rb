@@ -56,6 +56,7 @@ def self.from_omniauth(auth, current_user)
   if User.find_by_email(email)
     @user = User.find_by_email(email)
     @user.account = account
+    @user.save
   else
     @user = User.invite!(email: email, name: name, account_id: account.id)
    end

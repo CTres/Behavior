@@ -16,3 +16,5 @@
 //= require jquery_nested_form
 //= require product
 //= require_tree .
+$(document).ready(function() {
+});

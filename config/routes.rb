@@ -12,7 +12,7 @@ Myapp::Application.routes.draw do
 match "invite_user" => "accounts#invite_user", as: 'invite_user'
 get "accounts/vision" => "accounts#vision", as: "vision"
 
-  resources :assumptions
+  
   resources :users
 
   resources :accounts do 
@@ -23,6 +23,8 @@ get "accounts/vision" => "accounts#vision", as: "vision"
 
 
   resources :products do
-    resources :concepts 
+    resources :concepts do 
+      resources :assumptions
+    end
   end
 end

@@ -18,5 +18,6 @@ class Assumption < ActiveRecord::Base
   def default_values
     self.state ||= "untested"
   end
-	end
 end
+
+

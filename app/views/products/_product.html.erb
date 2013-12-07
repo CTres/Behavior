@@ -24,7 +24,7 @@
 			<ul>
 				<% product.concepts.each do |f| %>
 					<li>
-						<%= link_to f.title, product_concept_path(f, product) %>
+						<%= link_to f.title, product_concept_path(product, f) %>
 						<br>
 					</li>
 				<% end %>

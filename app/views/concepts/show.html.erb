@@ -1,17 +1,43 @@
-<h2> concept show </h2>
 <div class="container">
 	<div class="row">
 		<div class="span9">
-			<h2> <%= @product.name %>: <%= @concept.title %> </h2>
+			<ol class="breadcrumb">
+				<li>
+		  		<%=link_to 'home', root_path%>
+		  		<span class="divider">|</span>  
+		  	</li> 
+		  	<li>
+		  	<%=link_to_unless_current(@concept.product.name, @product)%> 
+		  	<span class="divider">|</span>  
+		  	</li>
+		  	<li>
+		  		<%=link_to_unless_current(@concept.title, product_concept_path(@product,@concept))%>
+		  		<span class="divider">|</span>   
+		  	</li>
+			</ol>
+			<div class="progress">
+				<ol class="inline">
+					<li id="active">DEFINE</li>
+					<li>VALIDATE</li>
+					<li>RESULT</li>
+				</ol>
+			</div>
+			<div class="content-container ">
+			<div class="content-header"></div>
+				<div class="content-content">
+					<table class="table table-striped">
+					<th>Assumption</th>
+					<th>State</th>
+						<%= render @assumptions %>
+					</table>
+					<%= render partial: 'shared/assumptions_form', locals: {resource: @concept} %>
+					<%= content_tag :a, 'Edit Assumptions', :href => "#assumptions-window", class: "btn metric-button", data: {toggle: 'modal'} %>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
+	
 
 
-			<%= simple_form_for(@concept, url: product_concepts_path(@product), method: :post)  do |f| %>
-				<%= f.simple_fields_for :assumption do |a| %>
-					<%= a.input :value %>
-					<%= a.input :state %>
-					<%= a.button :submit %>
-				<% end %>
-			<% end %>
+			

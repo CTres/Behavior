@@ -28,6 +28,7 @@ class ConceptsController <ApplicationController
 	def show
 		@account = current_account
 		@product = @concept.product
+		@assumptions = @concept.assumptions
 	end
 
 	def update
