@@ -9,7 +9,6 @@ class ConceptsController <ApplicationController
 	def create
 		@product = Product.find(params[:product_id])
 	    @concept = @product.concepts.new(params[:concept])
-	    @concept.state = 'idea'
 	    respond_to do |format|
 	      if @concept.save
 	        #add the original poster as a feature user. 
@@ -42,6 +41,16 @@ class ConceptsController <ApplicationController
     end
  	end
 
+ 	def destroy
+ 		@concept = Concept.find(params[:id])
+    @concept.destroy
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js
+ 		end
+ 	end
+ 	
+ 	private
   def find_concept
   	@concept = Concept.find(params[:id])
   end

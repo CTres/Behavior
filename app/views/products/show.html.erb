@@ -11,27 +11,38 @@
 	  	<span class="divider">|</span>  
 		</ol>
 			<h2><%= @product.name %> </h2>
+			<br>
 		</div>
 		</div>
 	</div>
-
-	<div class="content-container ">
-		<div class="content-header">Metrics</div>
-		<div class="content-content">
-			<%= render partial: @metrics %>	
-			<%= render partial: 'shared/metrics_form', locals: {resource: @product} %>
-			<%= content_tag :a, 'Edit Metrics', :href => "#metrics-window", class: "btn metric-button", data: {toggle: 'modal'} %>
+	<div class="container">
+		<div class="row">
+			<div class="span7">
+				<div class="content-container ">
+					<div class="content-header">Metrics</div>
+					<div class="content-content">
+						<%= render partial: @metrics %>	
+						<%= render partial: 'shared/metrics_form', locals: {resource: @product} %>
+						<%= content_tag :a, 'Edit Metrics', :href => "#metrics-window", class: "btn metric-button", data: {toggle: 'modal'} %>
+					</div>
+				</div>
+			</div>
 		</div>
-</div>
-
-<div class="content-container">
-	<div class="content-header">Concepts</div>
-	<div class="content-content">
-		<%= link_to 'new concept', new_product_concept_path(@product) %>
-<!-- 		<%= render partial: @concepts.where(state: 'idea') %> -->
-<table class="table	table-striped table-hover">
-<th>Concept</th>
-		<%= render partial: @concepts %>
-</table>
+		<div class="row">
+			<div class="span7">
+				<div class="content-container">
+					<div class="content-header">Concepts</div>
+					<div class="content-content">
+						<%= render partial: 'shared/concepts_form', locals: {resource: @product} %> 
+						<table class="table	table-striped table-hover concept-table">
+							<th class="span3">Name</th>
+							<th class="span1">State</th>
+							<th class="span1"><%= link_to 'new concept', new_product_concept_path(@product), class: 'btn btn-success' %></th>
+							<%= content_tag :a, 'Add Concept', :href => "#concepts-window", class: "btn metric-button", data: {toggle: 'modal'} %>
+							<%= render partial: @concepts %>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>

@@ -1,0 +1,18 @@
+<div id="concepts-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button> 
+						<h3> Concepts</h3>
+					</div>
+					<div class="modal-body">
+						<%= simple_nested_form_for(resource, url: product_concept_path(@product)) do |f| %>
+							<%= f.fields_for :concepts do |m| %>
+								<%= m.text_field :title, label: false, placeholder: "add concept"%>
+								<%= m.link_to_remove "X" %>
+							<% end %>
+							<%= f.link_to_add "add concept", :concepts %>
+					</div>
+					<div class="modal-footer"> 
+					<%= f.button :submit, 'Save Concept'%>
+					<% end %>
+					</div>
+				</div>

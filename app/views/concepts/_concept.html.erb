@@ -3,6 +3,9 @@
 <%= link_to concept.title, product_concept_path(@product, concept) %>
 </td>
 <td>
-
+<%= concept.state %>
+</td>
+<td>
+	<%= link_to "X", [@product, concept], :method => :delete, :class => 'btn btn-mini btn-danger' %>
 </td>
 </tr>

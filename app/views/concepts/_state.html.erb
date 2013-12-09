@@ -1,0 +1,18 @@
+<li>
+<%= simple_form_for @concept, url: product_concept_path(@product) do |f| %>
+<%=	f.hidden_field :state, value: "DEFINE" %>
+<%= f.submit "DEFINE", class: "btn #{'disabled' if @concept.state == 'DEFINE'}" %>
+<% end %>
+</li>
+<li>
+<%= simple_form_for @concept, url: product_concept_path(@product) do |f| %>
+<%=	f.hidden_field :state, value: "VALIDATE" %>
+<%= f.submit "VALIDATE", class: "btn #{'disabled' if @concept.state == 'VALIDATE'}" %>
+<% end %>
+</li>
+<li>
+<%= simple_form_for @concept, url: product_concept_path(@product) do |f| %>
+<%=	f.hidden_field :state, value: "RESULTS" %>
+<%= f.submit "RESULTS", class: "btn #{'disabled' if @concept.state == 'RESULTS'}" %>
+<% end %>
+</li>

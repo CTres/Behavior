@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
 
   accepts_nested_attributes_for :metrics, :allow_destroy => true
   accepts_nested_attributes_for :goals
-  accepts_nested_attributes_for :concepts
+  accepts_nested_attributes_for :concepts, :allow_destroy => true
   
 
   # def assign_account_and_user
